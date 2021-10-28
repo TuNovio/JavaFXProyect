@@ -42,6 +42,10 @@ public class Persona{
     public String getApellido(){
         return apellido.get();
     }
+    /**
+     * Edad de la persona 
+     * @return la edad de la persona
+     */
     public int getEdad(){
         return edad.get();
     }
