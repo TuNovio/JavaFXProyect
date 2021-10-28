@@ -114,8 +114,14 @@ public class MainControl implements Initializable {
      */
     @FXML
     void btnLimpiarClicked(ActionEvent event) {
-        limpiarCasillas();
-        tblLog.getItems().clear();
+        if (JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar sus datos", "Confirme", JOptionPane.YES_NO_OPTION)==0){
+            
+            limpiarCasillas();
+            tblLog.getItems().clear();
+        }
+        else{
+            MainControl.this.getClass();
+        }
     }
     /**
      * ingresar a la ventana siguiente ¿Aun no definida¡?
