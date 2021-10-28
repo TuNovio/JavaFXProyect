@@ -1,4 +1,4 @@
-# Computadores
+# Proyecto con javaFX
 Proyecto en java integrando la libreria de javaFX</p>
 1. Programas necesarios</p>
     - No cambies los nombres de las carpetas y no guardes la carpeta Ventana dentro de un file si se cambia se debe tener en cuenta que debes volver a importar la libreria de javaFX</b>
