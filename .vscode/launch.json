@@ -8,7 +8,8 @@
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "${file}",
+            "vmArgs": "--module-path \"A:/aplicaciones para la universidad/java FX/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
