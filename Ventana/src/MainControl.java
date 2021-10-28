@@ -16,6 +16,10 @@ import javafx.scene.layout.AnchorPane;
 
 public class MainControl implements Initializable {
     /**
+     * Objeto de tipo empresa
+     */
+    Empresa miEmpresa;
+    /**
      * objeto de tipo persona
      */
     Persona miPersona;
@@ -132,7 +136,6 @@ public class MainControl implements Initializable {
      */
     @FXML
     void btnLogOnClicked(ActionEvent event) {
-
     }
     /**
      * accion de registrar los datos escritos en las casillas de texto
