@@ -146,11 +146,15 @@ public class MainControl implements Initializable {
     void btnRegistrarOnClicked(ActionEvent event) {
         try {
             if (txtNombre.getText() != null && txtApellido.getText() != null && txtEdad.getText() != null) {
-
-                miPersona = new Persona(txtNombre.getText(), txtApellido.getText(),
-                        Integer.parseInt(txtEdad.getText()));
-                tblLog.getItems().add(miPersona);
-                limpiarCasillas();
+                if (Integer.parseInt(txtEdad.getText())<=100){
+                    miPersona = new Persona(txtNombre.getText(), txtApellido.getText(),
+                            Integer.parseInt(txtEdad.getText()));
+                    tblLog.getItems().add(miPersona);
+                    limpiarCasillas();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"El usuario no puede tener más de 100 años");
+                }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error de datos" + " | " + e.getMessage());
