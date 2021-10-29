@@ -107,7 +107,6 @@ public class MainControl implements Initializable {
     @FXML
     void btnEliminarOnClicked(ActionEvent event) {
         // borrar datos seleccionados
-
     }
 
     /**
@@ -133,7 +132,6 @@ public class MainControl implements Initializable {
      * ingresar a la ventana siguiente ¿Aun no definida¡? <b> pre: </b> la interfaz
      * referida se encuentra inicializada <b> post: </b> se abre la interfaz validar
      * que por lo menos se tenga 1 registro en la tabla
-     * 
      * @param event
      */
     @FXML
@@ -145,7 +143,6 @@ public class MainControl implements Initializable {
      * los elementos de la interfaz se encuentran inicializados <b> post: </b> se
      * registran los datos en la tabla Se debe validar los datos y el tipo de dato
      * que se quiera registrar
-     * 
      * @param event evento que sucede al presionar el boton
      */
     @FXML
@@ -189,7 +186,13 @@ public class MainControl implements Initializable {
         txtEdad.setText(null);
         txtNombre.setText(null);
     }
-
+    /**
+     * validar los valores de los datos de entrada
+     * <b> pre: </b> los datos de entrada, es decir, los elementos de la interfaz se encuentran inizializados
+     * <b> post: </b> se validan los datos
+     * No deben existir personas con el mismo nombre, la edad no debe superar los 100 años, las personas con mismo nombre se identifican por el apellido
+     * @return true si la validación es correcta de lo contrario falfse
+     */
     public boolean validarDatos() {
         boolean validar = false;
         String nombre = txtNombre.getText();
