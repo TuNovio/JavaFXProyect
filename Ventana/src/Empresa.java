@@ -9,6 +9,12 @@ public class Empresa {
      */    
     private ArrayList<Persona> personas;
     //---------------------constructor------------------//
+    /**
+     * contructor de la clase empresa 
+     * <b> pre: </b> la lista de usuarios se encuentra inicializada
+     * <b> post: </b> se construye la clase empresa
+     * se inicia el arreglo de personas como nueva lista
+     */
     public Empresa(){
         personas = new ArrayList<Persona>();
     }
