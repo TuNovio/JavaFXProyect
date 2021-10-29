@@ -1,5 +1,4 @@
 import javax.swing.JOptionPane;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,7 +14,7 @@ public class App extends Application {
         try {
             root= FXMLLoader.load(getClass().getResource("MainScene.fxml"));    
             Scene scene = new Scene(root);
-            primaryStage.setTitle("Interfax con java FX?");
+            primaryStage.setTitle("Registrar personas");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e) {
@@ -25,5 +24,6 @@ public class App extends Application {
  
  public static void main(String[] args) {
         launch(args);
+
     }
 }
