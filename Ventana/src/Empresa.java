@@ -59,6 +59,13 @@ public class Empresa {
         }
         return encontrada;
     }
+    /**
+     * Eliminar una persona buscada por el nomrbre 
+     * <b> pre: </b> la lista de personas se encuentra inicializada
+     * <b> post: </b> se elimina a la persona buscada por el nombre 
+     * @param miPersona, es la persona a eliminar. miPersona != null && miPersona != ""
+     * @return la persona eliminada del sistema
+     */
     public Persona eliminarPersona(Persona miPersona){
         boolean stop = false;
         Persona eliminar = null;
