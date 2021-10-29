@@ -25,7 +25,7 @@ public class MainControl implements Initializable {
      * panel en el cual se encuentran los elementos de la interfaz
      */
     @FXML
-    private AnchorPane PanelInterfaz;
+    private AnchorPane PanelInterfaz;   
     /**
      * boton que permite realizar la accion de eliminar registro
      */
