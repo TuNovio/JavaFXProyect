@@ -16,7 +16,7 @@ public class MainControl implements Initializable {
     /**
      * Objeto de tipo empresa
      */
-    Empresa miEmpresa;
+    Empresa miEmpresa = new Empresa();
     /**
      * objeto de tipo persona
      */
@@ -122,7 +122,7 @@ public class MainControl implements Initializable {
      */
     @FXML
     void btnLimpiarClicked(ActionEvent event) {
-        if (JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar sus datos", "Confirme",
+        if (JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar sus datos de la tabla :_", "Confirme",
                 JOptionPane.YES_NO_OPTION) == 0) {
 
             limpiarCasillas();
@@ -141,6 +141,7 @@ public class MainControl implements Initializable {
     @FXML
     void btnLogOnClicked(ActionEvent event) {
 
+        
     }
 
     /**
@@ -154,8 +155,9 @@ public class MainControl implements Initializable {
     void btnRegistrarOnClicked(ActionEvent event) {
         try {
             if(validarDatos() == true){
-                miPersona = new Persona(txtNombre.getText(), txtApellido.getText(), Integer.parseInt(txtEdad.getText()));
+                miPersona = crearPersona(txtNombre.getText(), txtApellido.getText(), Integer.parseInt(txtEdad.getText()));
                 tblLog.getItems().add(miPersona);
+                miEmpresa.agregarPersona(miPersona);
                 limpiarCasillas();
             }
             else{
@@ -221,5 +223,19 @@ public class MainControl implements Initializable {
      */
     public void eliminarIndice(int indice){
         tblLog.getItems().remove(indice);
+    }
+    /**
+     * crear la persona con los datos ingresados en la interfaz
+     * <b> pre: </b> la clase persona ya se encuentra inicializada
+     * <b> post: </b> se crea un objeto de tipo persona
+     * @param nombre nombre de la persona a crear. nombre != null && nombre != ""
+     * @param apellido apellido de la persona a crear. apellido != null && apellido != ""
+     * @param edad edad de la persona a crear. edad > 0 && edad != null
+     * @return el objeto de tipo persona con los datos.
+     */
+    public Persona crearPersona(String nombre, String apellido, int edad){
+        Persona personaCreada = null;
+        personaCreada = new Persona(nombre, apellido, edad);
+        return personaCreada;
     }
 }
