@@ -38,16 +38,11 @@ public class Empresa {
     public Persona agregarPersona(Persona miPersona){
         Persona mia = null; 
         if (miPersona != null){
-            for(int i = 0; i < personas.size(); i++){
-                if(personas.get(i).getNombre() != miPersona.getNombre()){
-                    personas.add(miPersona);
-                    mia = miPersona;
-                    JOptionPane.showMessageDialog(null, "La persona con el nombre de: " + " [ " + miPersona.getNombre() + " ] " + "Se registro exitosamente en el sistema");
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "La persona ya se encuentra registrada en el sistema");
-                }
-            }
+                listaPersonas().add(miPersona);
+                mia = miPersona;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Objeto persona nulo");
         }
         return mia;
     }
@@ -62,7 +57,7 @@ public class Empresa {
         boolean stop = false;
         Persona encontrada = null;
         if (nNombre != null && !stop){
-            for (int i = 0; i < personas.size(); i++){
+            for (int i = 0; i < listaPersonas().size(); i++){
                 Persona buscar = personas.get(i);
                 if(buscar.getNombre().equals(nNombre)){
                     encontrada = buscar;
@@ -86,7 +81,7 @@ public class Empresa {
         boolean stop = false;
         Persona eliminar = null;
         if (nombre != null && !stop){
-            for (int i = 0; i < personas.size(); i++){
+            for (int i = 0; i < listaPersonas().size(); i++){
                 Persona buscar = personas.get(i);
                 if(buscar.getNombre().equals(nombre)){
                     eliminar = buscar;
