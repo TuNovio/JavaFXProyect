@@ -96,7 +96,8 @@ public class MainControl implements Initializable {
      */
     @FXML
     private TextField txtNombre;
-
+ 
+    
     /**
      * eliminar un registro de la tabla
      *<b> pre: </b> los elementos de la interfaz se encuentran inicializados 
@@ -111,7 +112,7 @@ public class MainControl implements Initializable {
             eliminarIndice(indice);
         }
     }
-
+    
     /**
      * limpiar las casillas de texto y la informacion en la tabla <b> pre:</b> los
      * elementos de la interfaz se encuentran inicializados <b> post: </b> se
@@ -225,9 +226,7 @@ public class MainControl implements Initializable {
      * crear la persona con los datos ingresados en la interfaz
      * <b> pre: </b> la clase persona ya se encuentra inicializada
      * <b> post: </b> se crea un objeto de tipo persona
-     * @param nombre nombre de la persona a crear. nombre != null && nombre != ""
-     * @param apellido apellido de la persona a crear. apellido != null && apellido != ""
-     * @param edad edad de la persona a crear. edad > 0 && edad != null
+     * @param pCrear, es la persona con la informacion a crear. pCrear != null && pCrear != ""
      * @return el objeto de tipo persona con los datos.
      */
     public Persona crearPersona(String nombre, String apellido, int edad){
