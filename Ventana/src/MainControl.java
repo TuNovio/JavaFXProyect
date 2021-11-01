@@ -226,7 +226,9 @@ public class MainControl implements Initializable {
      * crear la persona con los datos ingresados en la interfaz
      * <b> pre: </b> la clase persona ya se encuentra inicializada
      * <b> post: </b> se crea un objeto de tipo persona
-     * @param pCrear, es la persona con la informacion a crear. pCrear != null && pCrear != ""
+     * @param nombre, es el nombre de la persona. nombre != null && nombre != ""
+     * @param apellido, es el apellido de la persona. apellido != null && apellido != ""
+     * @param edad, es la edad de la persona. edad > 0 && edad != null
      * @return el objeto de tipo persona con los datos.
      */
     public Persona crearPersona(String nombre, String apellido, int edad){
