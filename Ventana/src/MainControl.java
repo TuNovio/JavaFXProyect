@@ -107,11 +107,9 @@ public class MainControl implements Initializable {
     @FXML
     void btnEliminarOnClicked(ActionEvent event) {
         int indice = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posición del dato a eliminar:_["));
-        if (JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar sus datos", "Confirme",
-                JOptionPane.YES_NO_OPTION) == 0) {
-                    eliminarIndice(indice);
-                }
-
+        if (JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar sus datos", "Confirme", JOptionPane.YES_NO_OPTION) == 0) {
+            eliminarIndice(indice);
+        }
     }
 
     /**
@@ -124,7 +122,6 @@ public class MainControl implements Initializable {
     void btnLimpiarClicked(ActionEvent event) {
         if (JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar sus datos de la tabla :_", "Confirme",
                 JOptionPane.YES_NO_OPTION) == 0) {
-
             limpiarCasillas();
             tblLog.getItems().clear();
         } else {
@@ -141,7 +138,6 @@ public class MainControl implements Initializable {
     @FXML
     void btnLogOnClicked(ActionEvent event) {
 
-        
     }
 
     /**
@@ -156,9 +152,11 @@ public class MainControl implements Initializable {
         try {
             if(validarDatos() == true){
                 miPersona = crearPersona(txtNombre.getText(), txtApellido.getText(), Integer.parseInt(txtEdad.getText()));
-                tblLog.getItems().add(miPersona);
-                miEmpresa.agregarPersona(miPersona);
-                limpiarCasillas();
+                if (JOptionPane.showConfirmDialog(null, "Esta seguro que desea regitrar al usuario", "Confirme", JOptionPane.YES_NO_OPTION) == 0) {
+
+                    tblLog.getItems().add(miPersona);
+                    limpiarCasillas();
+                }
             }
             else{
                 System.out.print("An error ocurrer while triyig to do the register action");
@@ -206,7 +204,6 @@ public class MainControl implements Initializable {
         String apellido = txtApellido.getText();
         int edad = Integer.parseInt(txtEdad.getText());
         if(nombre != null && apellido != null && edad >0 && edad <= 100){
-            
             validar = true;
         }
         else{
