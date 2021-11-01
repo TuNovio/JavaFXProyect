@@ -98,22 +98,22 @@ public class MainControl implements Initializable {
     private TextField txtNombre;
 
     /**
-     * eliminar un registro de la tabla <b> pre: </b> los elementos de la interfaz
-     * se encuentran inicializados <b> post: </b> se eliminan los registros
+     * eliminar un registro de la tabla
+     *<b> pre: </b> los elementos de la interfaz se encuentran inicializados 
+     *<b> post: </b> se eliminan los registros
      * selecionados en la tabla validar que existan elementos en la tabla.
-     * 
      * @param event evento de eliminar registro
      */
     @FXML
     void btnEliminarOnClicked(ActionEvent event) {
-        // borrar datos seleccionados
+        int indice = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posición del dato a eliminar:_["));
+        eliminarIndice(indice);
     }
 
     /**
      * limpiar las casillas de texto y la informacion en la tabla <b> pre:</b> los
      * elementos de la interfaz se encuentran inicializados <b> post: </b> se
      * limpian las casillas de texto y tablla
-     * 
      * @param event evento de limpiar casillas de texto y tabla
      */
     @FXML
@@ -136,6 +136,7 @@ public class MainControl implements Initializable {
      */
     @FXML
     void btnLogOnClicked(ActionEvent event) {
+        
     }
 
     /**
@@ -208,5 +209,13 @@ public class MainControl implements Initializable {
         return validar;
 
     }
-
+    /**
+     * elimila los datos dada la posicion del dato en la tabla
+     * <b> pre: </b> la tabla ya se encuentra inicializada
+     * <b> post: </b> se elimina el dato dada la posición del mismo
+     * @param indice es el valor de la posicion del dato en la tabla. indice > 0 && indice != null
+     */
+    public void eliminarIndice(int indice){
+        tblLog.getItems().remove(indice);
+    }
 }
