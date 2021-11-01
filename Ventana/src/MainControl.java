@@ -229,7 +229,7 @@ public class MainControl implements Initializable {
      * @param nombre, es el nombre de la persona. nombre != null && nombre != ""
      * @param apellido, es el apellido de la persona. apellido != null && apellido != ""
      * @param edad, es la edad de la persona. edad > 0 && edad != null
-     * @return el objeto de tipo persona con los datos.
+     * @return la persona con la informacion creada
      */
     public Persona crearPersona(String nombre, String apellido, int edad){
         Persona personaCreada = null;
