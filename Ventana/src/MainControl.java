@@ -107,7 +107,11 @@ public class MainControl implements Initializable {
     @FXML
     void btnEliminarOnClicked(ActionEvent event) {
         int indice = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posición del dato a eliminar:_["));
-        eliminarIndice(indice);
+        if (JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar sus datos", "Confirme",
+                JOptionPane.YES_NO_OPTION) == 0) {
+                    eliminarIndice(indice);
+                }
+
     }
 
     /**
@@ -136,7 +140,7 @@ public class MainControl implements Initializable {
      */
     @FXML
     void btnLogOnClicked(ActionEvent event) {
-        
+
     }
 
     /**
