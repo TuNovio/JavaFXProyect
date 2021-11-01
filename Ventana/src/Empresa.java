@@ -20,6 +20,15 @@ public class Empresa {
     }
     //----------------------Metodos---------------------//
     /**
+     * lista de las personas en el sistema
+     * <b> pre: </b> la clase persona ya se encuentra inicializada
+     * <b> post: </b> se crea una lista con las personas
+     * @return las personas del sistema
+     */
+    public ArrayList<Persona> listaPersonas(){
+        return personas;
+    }
+    /**
      * Agregar una persona a la emprsa 
      * <b> pre: </b> la lista de personas se encuentra inicializada
      * <b> post: </b> se añade a la persona 
@@ -33,6 +42,7 @@ public class Empresa {
                 if(personas.get(i).getNombre() != miPersona.getNombre()){
                     personas.add(miPersona);
                     mia = miPersona;
+                    JOptionPane.showMessageDialog(null, "La persona con el nombre de: " + " [ " + miPersona.getNombre() + " ] " + "Se registro exitosamente en el sistema");
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "La persona ya se encuentra registrada en el sistema");
@@ -45,21 +55,21 @@ public class Empresa {
      * buscar una persona mediante el uso del nombre de la persona 
      * <b> pre: </b> la lista de personas ya se encuentra inicializada
      * <b> post: </b> se busca la persona por el nombre
-     * @param miPersona es la persona con los datos a buscar. miPersona != null 
+     * @param nNombre, es el nombre de la persona a buscar. nNombre != null &6 nNombre != ""
      * @return La persona con los datos
      */
-    public Persona buscarPersona(Persona miPersona){
+    public Persona buscarPersona(String nNombre){
         boolean stop = false;
         Persona encontrada = null;
-        if (miPersona != null && !stop){
+        if (nNombre != null && !stop){
             for (int i = 0; i < personas.size(); i++){
                 Persona buscar = personas.get(i);
-                if(buscar.getNombre().equals(miPersona.getNombre())){
-                    encontrada = miPersona;
+                if(buscar.getNombre().equals(nNombre)){
+                    encontrada = buscar;
                     stop = true;
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "La persona con nombre: " + " | "+ miPersona.getNombre() + " " + "no existe en la lista");
+                    JOptionPane.showMessageDialog(null, "La persona con nombre: " + " [ " + buscar.getNombre() + " ] " + "no existe en la lista");
                 }
             }
         }
@@ -69,22 +79,22 @@ public class Empresa {
      * Eliminar una persona buscada por el nomrbre 
      * <b> pre: </b> la lista de personas se encuentra inicializada
      * <b> post: </b> se elimina a la persona buscada por el nombre 
-     * @param miPersona, es la persona a eliminar. miPersona != null && miPersona != ""
+     * @param nombre, es el nombre de la persona a eliminar. nomnbre != null && nombre != ""
      * @return la persona eliminada del sistema
      */
-    public Persona eliminarPersona(Persona miPersona){
+    public Persona eliminarPersona(String nombre){
         boolean stop = false;
         Persona eliminar = null;
-        if (miPersona != null && !stop){
+        if (nombre != null && !stop){
             for (int i = 0; i < personas.size(); i++){
                 Persona buscar = personas.get(i);
-                if(buscar.getNombre().equals(miPersona.getNombre())){
-                    eliminar = miPersona;
-                    personas.remove(miPersona);
+                if(buscar.getNombre().equals(nombre)){
+                    eliminar = buscar;
+                    personas.remove(i);
                     stop = true;
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "La persona con nombre: " + " | "+ miPersona.getNombre() + " " + "no existe en la lista");
+                    JOptionPane.showMessageDialog(null, "La persona con nombre: " + " [] "+ eliminar.getNombre() + " ] " + "no existe en la lista");
                 }
             }
         }
