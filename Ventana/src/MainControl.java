@@ -183,7 +183,6 @@ public class MainControl implements Initializable {
      */
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        tblLog.setEditable(true);
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         colEdad.setCellValueFactory(new PropertyValueFactory<>("edad"));
@@ -221,7 +220,7 @@ public class MainControl implements Initializable {
 
     }
     /**
-     * elimila los datos dada la posicion del dato en la tabla
+     * elimila el objeto de tipo persona de la tabla 
      * <b> pre: </b> la tabla ya se encuentra inicializada
      * <b> post: </b> se elimina el dato dada la posición del mismo
      * @param personaEliminar, es un objeto de tipo persona que se quiere eliminar. personaEliminar != null && personaEliminar != ""
