@@ -5,8 +5,8 @@ import javax.swing.JOptionPane;
 public class Empresa {
     //-----------------------Atributos-------------------//
     /**
-     * lista de personas
-     */    
+     * lista de las personas registradas en la empresa
+     */
     private ArrayList<Persona> personas;
     //---------------------constructor------------------//
     /**
