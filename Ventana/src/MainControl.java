@@ -107,9 +107,14 @@ public class MainControl implements Initializable {
      */
     @FXML
     void btnEliminarOnClicked(ActionEvent event) {
-        int indice = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posición del dato a eliminar:_["));
-        if (JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar sus datos", "Confirme", JOptionPane.YES_NO_OPTION) == 0) {
-            eliminarIndice(indice);
+        String nombreBuscar = JOptionPane.showInputDialog("Ingrese el nombre de la persona a eliminar:_[");
+        boolean stop = false;
+        for(int i = 0; i< miEmpresa.listaPersonas().size(); i++){
+            Persona lista = miEmpresa.listaPersonas().get(i);
+            if(lista.getNombre().equals(nombreBuscar) && !stop){
+                eliminarObjeto(lista);
+                stop = true;
+            }
         }
     }
     
@@ -154,7 +159,7 @@ public class MainControl implements Initializable {
             if(validarDatos() == true){
                 miPersona = crearPersona(txtNombre.getText(), txtApellido.getText(), Integer.parseInt(txtEdad.getText()));
                 if (JOptionPane.showConfirmDialog(null, "Esta seguro que desea regitrar al usuario", "Confirme", JOptionPane.YES_NO_OPTION) == 0) {
-
+                    miEmpresa.agregarPersona(miPersona);
                     tblLog.getItems().add(miPersona);
                     limpiarCasillas();
                 }
@@ -177,6 +182,7 @@ public class MainControl implements Initializable {
      */
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        tblLog.setEditable(true);
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         colEdad.setCellValueFactory(new PropertyValueFactory<>("edad"));
@@ -217,10 +223,11 @@ public class MainControl implements Initializable {
      * elimila los datos dada la posicion del dato en la tabla
      * <b> pre: </b> la tabla ya se encuentra inicializada
      * <b> post: </b> se elimina el dato dada la posición del mismo
-     * @param indice es el valor de la posicion del dato en la tabla. indice > 0 && indice != null
+     * @param personaEliminar, es un objeto de tipo persona que se quiere eliminar. personaEliminar != null && personaEliminar != ""
      */
-    public void eliminarIndice(int indice){
-        tblLog.getItems().remove(indice);
+    public void eliminarObjeto(Persona personaEliminar){
+
+        tblLog.getItems().remove(personaEliminar);
     }
     /**
      * crear la persona con los datos ingresados en la interfaz
