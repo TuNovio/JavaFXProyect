@@ -144,7 +144,7 @@ public class MainControl implements Initializable {
      */
     @FXML
     void btnLogOnClicked(ActionEvent event) {
-
+    
     }
 
     /**
