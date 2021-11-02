@@ -113,6 +113,7 @@ public class MainControl implements Initializable {
             Persona lista = miEmpresa.listaPersonas().get(i);
             if(lista.getNombre().equals(nombreBuscar) && !stop){
                 eliminarObjeto(lista);
+                miEmpresa.eliminarPersona(nombreBuscar);
                 stop = true;
             }
         }
