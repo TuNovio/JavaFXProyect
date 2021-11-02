@@ -140,7 +140,7 @@ public class MainControl implements Initializable {
      * ingresar a la ventana siguiente ¿Aun no definida¡? <b> pre: </b> la interfaz
      * referida se encuentra inicializada <b> post: </b> se abre la interfaz validar
      * que por lo menos se tenga 1 registro en la tabla
-     * @param event
+     * @param event evento para el llamado de las otras interfaces o ventanas del programa
      */
     @FXML
     void btnLogOnClicked(ActionEvent event) {
@@ -150,8 +150,7 @@ public class MainControl implements Initializable {
     /**
      * accion de registrar los datos escritos en las casillas de texto <b> pre: </b>
      * los elementos de la interfaz se encuentran inicializados <b> post: </b> se
-     * registran los datos en la tabla Se debe validar los datos y el tipo de dato
-     * que se quiera registrar
+     * registran los datos en la tabla Se debe validar los datos y el tipo de dato que se quiera registrar
      * @param event evento que sucede al presionar el boton
      */
     @FXML
