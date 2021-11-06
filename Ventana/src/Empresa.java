@@ -88,9 +88,6 @@ public class Empresa {
                     personas.remove(i);
                     stop = true;
                 }
-                else{
-                    JOptionPane.showMessageDialog(null, "La persona con nombre: " + " [] "+ eliminar.getNombre() + " ] " + "no existe en la lista");
-                }
             }
         }
         return eliminar;
